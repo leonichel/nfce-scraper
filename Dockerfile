@@ -1,2 +1,2 @@
-FROM mrchypark/tiangolo-uvicorn-gunicorn-fastapi-pandas:python3.7
+FROM mrchypark/tiangolo-uvicorn-gunicorn-fastapi-pandas
 COPY ./app /app
