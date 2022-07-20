@@ -46,7 +46,7 @@ curl -X 'GET' \
 
 ## Where to get an NFC-e URL? 
 
-Brazilian consumer invoices contain a QR code, which, when scanned, generates an entry URL for this API. They are like: 'http://www.fazenda.pr.gov.br/nfce/qrcode?p=<nfce-code>'.
+Brazilian consumer invoices contain a QR code, which, when scanned, generates an entry URL for this API. They are like: http://www.fazenda.pr.gov.br/nfce/qrcode?p=<nfce-code>.
 
 ## Test it out
 
