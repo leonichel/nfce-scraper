@@ -10,7 +10,7 @@ Documentation: https://nfce-scraper.herokuapp.com/docs
 
 ~~~ sh
 curl -X 'GET' \
-  'https://nfce-scraper.herokuapp.com/nfce?nfce_url=http://www.fazenda.pr.gov.br/nfce/qrcode?p=<nfce-code>' \
+  'https://nfce-scraper.herokuapp.com/nfce?nfce_url=<nfce_url>' \
   -H 'accept: application/json'
 ~~~
 
@@ -44,9 +44,9 @@ curl -X 'GET' \
 ]
 ~~~
 
-## Where to get an NFC-e code? 
+## Where to get an NFC-e URL? 
 
-Brazilian consumer invoices contain a QR code, which, when scanned, generates an entry URL for this API.
+Brazilian consumer invoices contain a QR code, which, when scanned, generates an entry URL for this API. They are like: 'http://www.fazenda.pr.gov.br/nfce/qrcode?p=<nfce-code>'.
 
 ## Test it out
 
