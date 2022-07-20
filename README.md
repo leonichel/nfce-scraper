@@ -48,6 +48,8 @@ curl -X 'GET' \
 
 Brazilian consumer invoices contain a QR code, which, when scanned, generates an entry URL for this API. They are like: http://www.fazenda.pr.gov.br/nfce/qrcode?p=<nfce-code>.
 
+![http://spaceinformatica.com.br/blog-diferencas-nfce-nfe/](http://spaceinformatica.com.br/wp-content/uploads/2019/06/danfe-nfce-grupo-space-informatica_html.jpg)
+
 ## Test it out
 
 ~~~ sh
