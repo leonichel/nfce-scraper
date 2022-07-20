@@ -1,8 +1,6 @@
-FROM python:3.8-slim
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 
-WORKDIR /app
-COPY requirements.txt ./
-RUN pip3 install --no-cache-dir -r requirements.txt
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
-COPY . .
-EXPOSE 8000
+COPY ./app /app
