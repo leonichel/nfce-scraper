@@ -1,3 +1,4 @@
+from unities_codes import UNITIES_DECODE 
 import re
 import requests
 from fastapi import FastAPI
@@ -33,7 +34,7 @@ async def read_nfce(nfce_url: str = ''):
 
 	items = [item.get_text() for item in soup.find_all('span', class_='txtTit2')]
 	codes = [int(item.get_text().split(': ')[1].replace(')', '')) for item in soup.find_all('span', class_='RCod')]
-	unities = ['KG' if item.get_text().find('KG') != -1 else 'UN' for item in soup.find_all('span', class_='RUN')]
+	unities = [UNITIES_DECODE[item.get_text().replace('UN: ', '').replace('\n', '').replace(' ', '').upper()] if item.get_text().replace('UN: ', '').replace('\n', '').replace(' ', '').upper() in UNITIES_DECODE else 'unidade' for item in soup.find_all('span', class_='RUN')]
 	amounts = [float(item.get_text().replace(' ', '').replace('Qtde.:', '').replace('\n', '').replace(',', '.')) for item in soup.find_all('span', class_='Rqtd')]
 	unity_prices = [float(item.get_text().replace(u'\xa0', u'').replace('\nVl. Unit.:', '').replace(' ', '').replace('\n', '').replace(',', '.')) for item in soup.find_all('span', class_='RvlUnit')]
 	prices = [float(item.get_text().replace(',', '.')) for item in soup.find_all('span', class_='valor')]
